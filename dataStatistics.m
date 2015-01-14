@@ -13,6 +13,9 @@ function result = dataStatistics(data, statistic)
     %'Mean Hot Growth rate' Middelvrdi (gennemsnit) af Growth rate
     %hvor Temperature er strre end 50 grader.
     
+    
+    % i denne switch vælges der generalt først data, og derefter berenges
+    % det ønskede.
     switch statistic
         case 'Mean Temperature'
             result = mean(data(:,1));
