@@ -13,30 +13,31 @@ function result = dataStatistics(data, statistic)
     %'Mean Hot Growth rate' Middelvrdi (gennemsnit) af Growth rate
     %hvor Temperature er strre end 50 grader.
     
+    statistic = lower(statistic);
     
     % i denne switch vælges der generalt først data, og derefter berenges
     % det ønskede.
     switch statistic
-        case 'Mean Temperature'
+        case {'mean temperature','1'}
             result = mean(data(:,1));
-        case 'Mean Growth rate'
+        case {'mean growth rate','2'}
             result = mean(data(:,2));
-        case 'Std Temperature'
+        case {'std temperature','3'}
             result = std(data(:,1));
-        case 'Std Growth rate'
+        case {'std growth rate','4'}
             result = std(data(:,2));
-        case 'Rows'
+        case {'rows','5'}
             temp = size(data);
             result = temp(1);
-        case 'Mean Cold Growth rate'
+        case {'mean cold rowth rate','6'}
             temp = data(:,1:2);
             temp = temp(temp(:,1) < 20,:);                       
             result = mean(temp(:,2));
-        case 'Mean Hot Growth rate'
+        case {'mean hot growth rate','7'}
             temp = data(:,1:2);
             temp = temp(temp(:,1) > 50,:);                    
             result = mean(temp(:,2));
         otherwise
-            result = 'wrong input';
+            result = 'Wrong input';
     end
 end
