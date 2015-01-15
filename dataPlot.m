@@ -55,7 +55,7 @@ xlim([10,60]);
 % Titel på graf og akser, samt forklaring på hvilke linjer der er hvad.
 legend('Salmonella enterica', 'Bacillus Cereus','Listeria','Brochothrix thermosphacta','Location','NorthWest');
 title('Growth to temperature dependancy');
-xlabel('temperature');
+xlabel('Temperature');
 ylabel('Growth rate');
 
 end
