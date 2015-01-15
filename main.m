@@ -2,9 +2,9 @@
 
 run = 1;
 while run
-    choice = input('do something\n','s');
+    choice = lower(input('do something\n','s'));
     switch choice
-        case {'load data', 'L'}
+        case {'load data', 'L','1'}
             disp('Loading data');
         case 'filter data'
             disp('Filtering data');
@@ -12,7 +12,7 @@ while run
             disp('Displaying statistics');
         case 'generate plots'
             disp('Generateing plots');
-        case 'quit'
+        case {'quit','q'}
             disp('Quiting');
             run = 0;
         otherwise
