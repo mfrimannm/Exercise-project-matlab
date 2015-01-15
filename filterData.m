@@ -7,3 +7,8 @@ function newData = filterData(data, filterChoice)
     % i make a vector that decompeses the filterChoice vector to be used
     % through the function.
     
+    v= 1:4
+    v = num2cell(v)
+    [a,b,c,d] = deal(v{:})
+    
+    
