@@ -26,7 +26,10 @@ while runProgram
             end                 
         case 12 % Filter data
             fprintf('\nYou chose to filter data.\nTo cancel enter "cancel"\n');
-            newData = filterData(data,filterChoice);
+            filterChoice = filterInput;
+            fprintf('Your filtering is set to:\n');
+            disp(filterChoice);
+            newData = dataFilter(data,filterChoice);
         case 13 % Show statistic
             runMenu = 1;
             while runMenu
