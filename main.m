@@ -4,7 +4,7 @@ run = 1;
 while run
     choice = input('do something\n','s');
     switch choice
-        case 'load data'
+        case {'load data', 'L'}
             disp('Loading data');
         case 'filter data'
             disp('Filtering data');
