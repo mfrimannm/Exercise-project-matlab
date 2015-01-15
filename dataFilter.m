@@ -9,6 +9,10 @@ function newData = dataFilter(data, filterChoice)
     filterChoice = num2cell(filterChoice);
     [filterBacteria,bacteria1,bacteria2,bacteria3,bacteria4,filterTemp,minTemp,maxTemp,filterGrowthRate,minGrowthRate,maxGrowthRate] = deal(filterChoice{:});
     
+    % vælg hvilke bakterier, 1 ,2 , 3, 4
+    % filterBak 1/0
+    % tilvælg bak 1,2,3,4
+    
     if filterBacteria
         if not(bacteria1)
             data = data((data(:,3)~=1),:);
@@ -28,9 +32,11 @@ function newData = dataFilter(data, filterChoice)
         
     end
        
-    % Choose which bacteria should be included in the filter, 1 ,2 , 3, 4
-    % filterBak 1/0
-    % tilvælg bak 1,2,3,4
+    % Vælge inden for maxs min temp, hvis en ikke sættes så standart.
+    % filterTemp 1/0
+    % hvis 0 er givet ved min/max sættes standart
+    % min 10 eller over
+    % max 60 eller under
     
     if filterTemp
         if minTemp == 0
@@ -49,11 +55,11 @@ function newData = dataFilter(data, filterChoice)
         data = data((data(:,1)< maxTemp),:);
     end
     
-    % Vælge inden for maxs min temp, hvis en ikke sættes så standart.
-    % filterTemp 1/0
-    % hvis 0 er givet ved min/max sættes standart
-    % min 10 eller over
-    % max 60 eller under
+    % vælge inden for maxs min Groth speed, hvis en ikke sættes så standart.
+    % filterGrowthRate 1/0
+    % hvis -1 er givet ved min/max sættes standart
+    % min 0 eller over
+    % max uendelig eller under
     
     if filterGrowthRate
         if minGrowthRate > maxGrowthRate
@@ -67,11 +73,6 @@ function newData = dataFilter(data, filterChoice)
         if maxGrowthRate > 0
         data = data((data(:,2)< maxGrowthRate),:);
         end
-    % vælge inden for maxs min Groth speed, hvis en ikke sættes så standart.
-    % filterGrowthRate 1/0
-    % hvis -1 er givet ved min/max sættes standart
-    % min 0 eller over
-    % max uendelig eller under
     end
     
     newData = data;
