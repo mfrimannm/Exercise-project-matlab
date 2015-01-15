@@ -6,12 +6,33 @@ function newData = filterData(data, filterChoice)
     
     % i make a vector that decompeses the filterChoice vector to be used
     % through the function.
-    filterChoice = num2cell(filterChoice)
-    [a,b,c,d] = deal(v{:})
+    filterChoice = num2cell(filterChoice);
+    [filterBacteria,bacteria1,bacteria2,bacteria3,bacteria4,filterTemp,minTemp,maxTemp,filterGrowthRate,minGrowthRate,maxGrowthRate] = deal(filterChoice{:});
     
+    if filterBacteria
+        data = data((data(3,:)==bacteria1 || data(3,:)==bacteria2 || data(3,:)==bacteria3 || data(3,:)==bacteria4),:);
+    end
+       
     % vælge hvilke bakerier, 1 ,2 , 3, 4
     % filterBak 1/0
     % tilvælg bak 1,2,3,4
+    
+    if filterTemp
+        if minTemp == 0
+            minTemp = 10;
+        end
+        if maxTemp == 0
+            maxTemp = 60;
+        end
+        if minTemp > maxTemp
+            temp = minTemp;
+            minTemp = maxTemp;
+            maxTemp = temp;
+        end
+        
+        data = data((data(1,:)> minTemp),:);
+        data = data((data(1,:)< maxTemp),:);
+    end
     
     % Vælge inden for maxs min temp, hvis en ikke sættes så standart.
     % filterTemp 1/0
@@ -19,12 +40,28 @@ function newData = filterData(data, filterChoice)
     % min 10 eller over
     % max 60 eller under
     
-    % når der sprøges til denne skal det gøres så der altid står den
-    % laveste temp ved min
-    
+    if filterGrowthRate
+        if minGrowthRate > maxGrowthRate
+            temp = minGrowthRate;
+            minGrowthRate = maxGrowthRate;
+            maxGrowthRate = temp;
+        end
+        
+        data = data((data(1,:)> minGrowthRate),:);
+        
+        if maxGrowthRate > 0
+        data = data((data(1,:)< maxGrowthRate),:);
+        end
     % vælge inden for maxs min Groth speed, hvis en ikke sættes så standart.
-    % filterGrowth 1/0
+    % filterGrowthRate 1/0
     % hvis -1 er givet ved min/max sættes standart
     % min 0 eller over
     % max uendelig eller under
+    end
+    
+    newData = data;
+end
+
+    
+   
     
