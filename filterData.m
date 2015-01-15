@@ -6,9 +6,25 @@ function newData = filterData(data, filterChoice)
     
     % i make a vector that decompeses the filterChoice vector to be used
     % through the function.
-    
-    v= 1:4
-    v = num2cell(v)
+    filterChoice = num2cell(filterChoice)
     [a,b,c,d] = deal(v{:})
     
+    % vælge hvilke bakerier, 1 ,2 , 3, 4
+    % filterBak 1/0
+    % tilvælg bak 1,2,3,4
+    
+    % Vælge inden for maxs min temp, hvis en ikke sættes så standart.
+    % filterTemp 1/0
+    % hvis 0 er givet ved min/max sættes standart
+    % min 10 eller over
+    % max 60 eller under
+    
+    % når der sprøges til denne skal det gøres så der altid står den
+    % laveste temp ved min
+    
+    % vælge inden for maxs min Groth speed, hvis en ikke sættes så standart.
+    % filterGrowth 1/0
+    % hvis -1 er givet ved min/max sættes standart
+    % min 0 eller over
+    % max uendelig eller under
     
