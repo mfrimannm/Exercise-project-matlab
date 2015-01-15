@@ -1,4 +1,4 @@
-function newData = filterData(data, filterChoice)
+function newData = dataFilter(data, filterChoice)
     % data is a matix with data type per clummen, like temp - growth - type
     % filterChoice is a vector N per 1, it will be composed so this
     % function kan make its action so fist a bit sayingen 1/0 if the action
@@ -10,7 +10,22 @@ function newData = filterData(data, filterChoice)
     [filterBacteria,bacteria1,bacteria2,bacteria3,bacteria4,filterTemp,minTemp,maxTemp,filterGrowthRate,minGrowthRate,maxGrowthRate] = deal(filterChoice{:});
     
     if filterBacteria
-        data = data((data(3,:)==bacteria1 || data(3,:)==bacteria2 || data(3,:)==bacteria3 || data(3,:)==bacteria4),:);
+        if not(bacteria1)
+            data = data((data(:,3)~=1),:);
+        end
+        
+        if not(bacteria2)
+            data = data((data(:,3)~=2),:);
+        end
+        
+        if not(bacteria3)
+            data = data((data(:,3)~=3),:);
+        end
+        
+        if not(bacteria4)
+            data = data((data(:,3)~=4),:);
+        end
+        
     end
        
     % vælge hvilke bakerier, 1 ,2 , 3, 4
@@ -30,8 +45,8 @@ function newData = filterData(data, filterChoice)
             maxTemp = temp;
         end
         
-        data = data((data(1,:)> minTemp),:);
-        data = data((data(1,:)< maxTemp),:);
+        data = data((data(:,1)> minTemp),:);
+        data = data((data(:,1)< maxTemp),:);
     end
     
     % Vælge inden for maxs min temp, hvis en ikke sættes så standart.
@@ -47,10 +62,10 @@ function newData = filterData(data, filterChoice)
             maxGrowthRate = temp;
         end
         
-        data = data((data(1,:)> minGrowthRate),:);
+        data = data((data(:,2)> minGrowthRate),:);
         
         if maxGrowthRate > 0
-        data = data((data(1,:)< maxGrowthRate),:);
+        data = data((data(:,2)< maxGrowthRate),:);
         end
     % vælge inden for maxs min Groth speed, hvis en ikke sættes så standart.
     % filterGrowthRate 1/0
@@ -60,8 +75,4 @@ function newData = filterData(data, filterChoice)
     end
     
     newData = data;
-end
-
-    
-   
-    
+end 
