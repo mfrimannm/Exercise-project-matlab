@@ -5,9 +5,7 @@ while true
     fprintf('\n 1. Load data.\n 2. Filter data.\n 3. Show statistic.\n 4. Generate diagrams.\n 5. Cancel.\n\n');
     menuChoice = str2double(input('Please enter the number of the action of choice: ', 's'));
     switch (menuChoice + loaded)
-        case 1
-            fprintf('\nYou chose to load data.\nTo cancel enter "cancel"\n');
-            
+        case 1            
             while true
             fprintf('\nYou chose to load data.\nTo cancel enter "cancel"\n');  
             filename = input('Please enter the name of the file you want to load: ', 's');
