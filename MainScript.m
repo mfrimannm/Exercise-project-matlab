@@ -5,9 +5,7 @@ while true
     fprintf('\n 1. Load data.\n 2. Filter data.\n 3. Show statistic.\n 4. Generate diagrams.\n 5. Cancel.\n\n');
     menuChoice = str2double(input('Please enter the number of the action of choice: ', 's'));
     switch (menuChoice + loaded)
-        case 1
-            fprintf('\nYou chose to load data.\nTo cancel enter "cancel"\n');
-            
+        case 1  
             while true
             fprintf('\nYou chose to load data.\nTo cancel enter "cancel"\n');  
             filename = input('Please enter the name of the file you want to load: ', 's');
@@ -21,14 +19,14 @@ while true
                    fprintf('\nInvalid filename, please try again.\n');
                    clear filename;
                 end
-            end
-                           
+            end                 
         case 12
-            fprintf('\nYou chose to filter data.\n');
+            fprintf('\nYou chose to filter data.\nTo cancel enter "cancel"\n');
             %dataFilter fuction?!?!?
             break;
         case 13
-            fprintf('\nYou chose to show statistic.\n');
+            fprintf('\nYou chose to show statistic.\nTo cancel enter "cancel"\n');
+            statistic = input('Please enter the name of the file you want to load: ', 's');
             dataStatistics(data, statistic)
             break;
         case 14
