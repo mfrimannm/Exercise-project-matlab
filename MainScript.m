@@ -23,7 +23,7 @@ while true
             end                 
         case 12
             fprintf('\nYou chose to filter data.\nTo cancel enter "cancel"\n');
-            newData = filterData(data,filterChoice);
+            newData = dataFilter(newData,filterChoice);
             break;
         case 13
             while true
@@ -35,6 +35,7 @@ while true
                     break;
                 else
                    result = dataStatistics(newData, statistic);
+                   statistic = changeStatString(statistic);
                    fprintf('You chose to show %s which is %d \n',statistic,result);
                    break;
                 end
