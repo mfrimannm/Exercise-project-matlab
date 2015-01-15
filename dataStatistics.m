@@ -1,17 +1,6 @@
 function result = dataStatistics(data, statistic)
-    % denne funktion vil beregne sig frem til en skalar som indeholder den
-    % beregnede statistik
-    % outputtet vil være et tal hvis værdi afhænger af hvad der bedes
-    % beregnet via inputtet "statistic", listen af muligheder er følgende:
-    %'Mean Temperature' Middelvrdi (gennemsnit) af Temperature.
-    %'Mean Growth rate' Middelvrdi (gennemsnit) af Growth rate.
-    %'Std Temperature' Standard-afvigelse af Temperature.
-    %'Std Growth rate' Standard-afvigelse af Growth rate.
-    %'Rows' Det totale antal rkker i data.
-    %'Mean Cold Growth rate' Middelvrdi (gennemsnit) af Growth rate
-    %hvor Temperature er mindre end 20 grader.
-    %'Mean Hot Growth rate' Middelvrdi (gennemsnit) af Growth rate
-    %hvor Temperature er strre end 50 grader.
+    % Denne funktion modtager data samt hvilken type statistik der ønskes,
+    % og returnerer så statistikken.
     
     statistic = lower(statistic);
     
