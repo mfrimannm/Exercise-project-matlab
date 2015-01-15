@@ -3,19 +3,19 @@ function newString = changeStatString(statString)
 % pænere output.
 
 switch statString
-    case 1
+    case '1'
         newString = 'Mean Temperature';
-    case 2
+    case '2'
         newString = 'Mean Growth rate';
-    case 3
-        newString = 'Std Temperature';
-    case 4
-        newString = 'Std Growth rate';
-    case 5
+    case '3'
+        newString = 'Standard Temperature';
+    case '4'
+        newString = 'Standard Growth rate';
+    case '5'
         newString = 'Rows';
-    case 6
+    case '6'
         newString = 'Mean Cold Growth rate';
-    case 7
+    case '7'
         newString = 'Mean Hot Growth rate';
     otherwise    
         newString = statString;

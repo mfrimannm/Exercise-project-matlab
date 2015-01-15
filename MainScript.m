@@ -38,6 +38,7 @@ while runProgram
                     runMenu = 0;
                 else
                    result = dataStatistics(newData, statistic);
+                   statistic = changeStatString(statistic);
                    fprintf('You chose to show %s which is %d \n',statistic,result);
                    runMenu = 0;
                 end
