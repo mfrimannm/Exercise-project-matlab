@@ -8,9 +8,9 @@ switch statString
     case '2'
         newString = 'Mean Growth rate';
     case '3'
-        newString = 'Standart Temperature';
+        newString = 'Standard Temperature';
     case '4'
-        newString = 'Standart Growth rate';
+        newString = 'Standard Growth rate';
     case '5'
         newString = 'Rows';
     case '6'
