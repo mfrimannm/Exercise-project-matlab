@@ -38,7 +38,7 @@ subplot(2,1,1);
 bar(ybac,bacTot,'b');
 % y aksen sættes til altid at ligge mellem 0 og 10% over højest
 % forekommende frekvens af en enkel type bakterie.
-ylim([0,(NBac+(NBac*0.1))]);
+ylim([0,(NBac+((1+NBac)*0.1))]);
 
 % Titel på graf og akser, samt de enkelte søjler tilføjes.
 title('Frequency of bacteria');

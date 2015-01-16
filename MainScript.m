@@ -29,7 +29,7 @@ while runProgram
             filterChoice = filterInput;
             fprintf('Your filtering is set to:\n');
             disp(filterChoice);
-            newData = dataFilter(newData,filterChoice);
+            newData = dataFilter(data,filterChoice);
         case 13 % Show statistic
             runMenu = 1;
             while runMenu
