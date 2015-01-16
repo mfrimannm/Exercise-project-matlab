@@ -4,36 +4,36 @@ function filterChoice = filterInput
 filterChoice = zeros(1,11);
 
 % Bacteria
-bacYN = lower(input('\nWould you like to filter with respect to bacteria types? (Y/N): ', 's'));
-if bacYN == 'y'
+bacYN = ('\nWould you like to filter with respect to bacteria types? (Y/N): ');
+if inputYesNo(bacYN)
     filterChoice(1) = 1;
-    bac_1YN = lower(input('\nWould you like to include Salmonella enterica in the data? (Y/N): ', 's'));
-    if bac_1YN == 'y'
+    bac_1YN = ('\nWould you like to include Salmonella enterica in the data? (Y/N): ');
+    if inputYesNo(bac_1YN)
         filterChoice(2) = 1;
     end
     
-    bac_2YN = lower(input('\nWould you like to include Bacillus cereus in the data? (Y/N): ', 's'));
-    if bac_2YN == 'y'
+    bac_2YN = ('\nWould you like to include Bacillus cereus in the data? (Y/N): ');
+    if inputYesNo(bac_2YN)
         filterChoice(3) = 1;
     end
     
-    bac_3YN = lower(input('\nWould you like to include Listeria in the data? (Y/N): ', 's'));
-    if bac_3YN == 'y'
+    bac_3YN = ('\nWould you like to include Listeria in the data? (Y/N): ');
+    if inputYesNo(bac_3YN)
         filterChoice(4) = 1;
     end
     
-    bac_4YN = lower(input('\nWould you like to include Brochothrix thermosphacta in the data? (Y/N): ', 's'));
-    if bac_4YN == 'y'
+    bac_4YN = ('\nWould you like to include Brochothrix thermosphacta in the data? (Y/N): ');
+    if inputYesNo(bac_4YN)
         filterChoice(5) = 1;
     end
 end
 
 % Temp
-tempYN = lower(input('\nWould you like to filter with respect to temperature? (Y/N): ', 's'));
-if tempYN == 'y'
+tempYN = ('\nWould you like to filter with respect to temperature? (Y/N): ');
+if inputYesNo(tempYN)
     filterChoice(6) = 1;
-    tempMinYN = lower(input('\nWould you like to input a minimum temperature for the filter? (Y/N): ', 's'));
-    if tempMinYN == 'y'
+    tempMinYN = ('\nWould you like to input a minimum temperature for the filter? (Y/N): ');
+    if inputYesNo(tempMinYN)
         run = 1;
         while run
             minTemp = str2double(input('\nPlease insert the desired limit: ', 's'));
@@ -45,8 +45,8 @@ if tempYN == 'y'
             end
         end
     end
-    tempMaxYN = lower(input('\nWould you like to input a maximum temperature for the filter? (Y/N): ', 's'));
-    if tempMaxYN == 'y'
+    tempMaxYN ('\nWould you like to input a maximum temperature for the filter? (Y/N): ');
+    if inputYesNo(tempMaxYN)
         run = 1;
         while run
             maxTemp = str2double(input('\nPlease insert the desired limit: ', 's'));
@@ -61,11 +61,11 @@ if tempYN == 'y'
 end
 
 % GrowthRate
-growthYN = lower(input('\nWould you like to filter with respect to growth rate? (Y/N): ', 's'));
-if growthYN == 'y'
+growthYN = ('\nWould you like to filter with respect to growth rate? (Y/N): ');
+if inputYesNo(growthYN)
     filterChoice(9) = 1;
-    growthMinYN = lower(input('\nWould you like to input a minimum growth rate for the filter? (Y/N): ', 's'));
-    if growthMinYN == 'y'
+    growthMinYN = ('\nWould you like to input a minimum growth rate for the filter? (Y/N): ');
+    if inputYesNo(growthMinYN)
         run = 1;
         while run
             minGrowth = str2double(input('\nPlease insert the desired limit: ', 's'));
@@ -77,8 +77,8 @@ if growthYN == 'y'
             end
         end
     end
-    growthMaxYN = lower(input('\nWould you like to input a maximum growth rate for the filter? (Y/N): ', 's'));
-    if growthMaxYN == 'y'
+    growthMaxYN = ('\nWould you like to input a maximum growth rate for the filter? (Y/N): ');
+    if inputYesNo(growthMaxYN)
         run = 1;
         while run
             maxGrowth = str2double(input('\nPlease insert the desired limit: ', 's'));
