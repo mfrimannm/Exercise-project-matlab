@@ -7,7 +7,7 @@ while runProgram
     if ifFil
         disp(filterChoice);
     end
-    fprintf('\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n 1. Load data.\n 2. Filter data.\n 3. Show statistic.\n 4. Generate diagrams.\n 5. Cancel.\n\n');
+    fprintf('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n 1. Load data.\n 2. Filter data.\n 3. Show statistic.\n 4. Generate diagrams.\n 5. Cancel.\n\n');
     menuChoice = str2double(input('Please enter the number of the action of choice: ', 's'));
     switch (menuChoice + loaded)
         case 1 % load datafile
