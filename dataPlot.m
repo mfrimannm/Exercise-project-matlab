@@ -53,7 +53,8 @@ subplot(2,1,2);
 plot(temp_1,g_1,'-b',temp_2,g_2,'-r',temp_3,g_3,'-k',temp_4,g_4,'-g',temp_1,g_1,'.b',temp_2,g_2,'.r',temp_3,g_3,'.k',temp_4,g_4,'.g')
 xlim([10,60]);
 % Titel på graf og akser, samt forklaring på hvilke linjer der er hvad.
-legend('Salmonella enterica', 'Bacillus Cereus','Listeria','Brochothrix thermosphacta','Location','NorthEast');
+labels = cellstr(['Salmonella enterica      '; 'Bacillus Cereus          ';'Listeria                 ';'Brochothrix thermosphacta']);
+legend(labels(bacTot > 0),'Location','NorthEast');
 legend boxoff;
 title('Growth to temperature dependancy');
 xlabel('Temperature');
