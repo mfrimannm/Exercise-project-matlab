@@ -1,8 +1,12 @@
 loaded = 0;
 runProgram = 1;
 runMenu = 0;
+ifFil = 0;
 
 while runProgram
+    if ifFil
+        disp(filterChoice);
+    end
     fprintf('\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n 1. Load data.\n 2. Filter data.\n 3. Show statistic.\n 4. Generate diagrams.\n 5. Cancel.\n\n');
     menuChoice = str2double(input('Please enter the number of the action of choice: ', 's'));
     switch (menuChoice + loaded)
@@ -29,6 +33,7 @@ while runProgram
             filterChoice = filterInput;
             fprintf('Your filtering is set to:\n');
             disp(filterChoice);
+            ifFil = 1;
             newData = dataFilter(data,filterChoice);
         case 13 % Show statistic
             runMenu = 1;
