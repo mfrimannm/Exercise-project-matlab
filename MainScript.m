@@ -5,6 +5,7 @@ ifFil = 0;
 
 while runProgram
     if ifFil
+        fprintf('\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n Your current filter is: \n');
         disp(filterChoice);
     end
     fprintf('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n 1. Load data.\n 2. Filter data.\n 3. Show statistic.\n 4. Generate diagrams.\n 5. Cancel.\n\n');
