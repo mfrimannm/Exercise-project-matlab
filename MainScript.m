@@ -49,7 +49,7 @@ while runProgram
         case 14 % Generate diagrams
             fprintf('\nYou chose to generate diagrams.\n');
             dataPlot(newData)
-        case {5, 15} % quit program
+        case {5, 15, 'cancel'} % quit program
             fprintf('\nYou chose to cancel.\n');
             runProgram = 0;
         otherwise
