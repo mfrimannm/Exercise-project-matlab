@@ -53,7 +53,7 @@ while runProgram
             fprintf('\nYou chose to cancel.\n');
             runProgram = 0;
         otherwise
-            fprintf('\nInvalid action. Please try again.\nRemember to load data first.\n')
+            fprintf('\nInvalid action. Please try again.\nRemember first to load data.\n')
     end
 end
 
