@@ -35,7 +35,7 @@ figure('Position', [100, 75, 1000, 600]);
 
 % Først laves subplot 1, som er et søjlediagram:
 subplot(2,1,1);
-bar(ybac,bacTot,'b');  
+bar(ybac,bacTot,'b');
 % y aksen sættes til altid at ligge mellem 0 og 10% over højest
 % forekommende frekvens af en enkel type bakterie.
 ylim([0,(NBac+(NBac*0.1))]);
@@ -60,4 +60,3 @@ xlabel('Temperature');
 ylabel('Growth rate');
 
 end
-
