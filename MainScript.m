@@ -9,21 +9,21 @@ while runProgram
         case 1 % load datafile
             runMenu = 1;
             while runMenu
-            fprintf('\nYou chose to load data.\nTo cancel enter "cancel"\n');  
-            filename = input('Please enter the name of the file you want to load: ', 's');
+                fprintf('\nYou chose to load data.\nTo cancel enter "cancel"\n');
+                filename = input('Please enter the name of the file you want to load: ', 's');
                 if strcmpi(filename,'cancel')
                     runMenu = 0;
                 elseif exist(filename,'file') ~= 0
                     data = dataLoad(filename);
                     newData = data;
-                    fprintf('\nYou have successfully loaded the datafile named: %s\n',filename); 
+                    fprintf('\nYou have successfully loaded the datafile named: %s\n',filename);
                     loaded = 10;
                     runMenu = 0;
                 else
-                   fprintf('\nInvalid filename, please try again.\n');
-                   clear filename;
+                    fprintf('\nInvalid filename, please try again.\n');
+                    clear filename;
                 end
-            end                 
+            end
         case 12 % Filter data
             fprintf('\nYou chose to filter data.\nTo cancel enter "cancel"\n');
             filterChoice = filterInput;
@@ -40,10 +40,10 @@ while runProgram
                     fprintf('\nYou chose to cancel.\n');
                     runMenu = 0;
                 else
-                   result = dataStatistics(newData, statistic);
-                   statistic = changeStatString(statistic);
-                   fprintf('You chose to show %s which is %d \n',statistic,result);
-                   runMenu = 0;
+                    result = dataStatistics(newData, statistic);
+                    statistic = changeStatString(statistic);
+                    fprintf('You chose to show %s which is %d \n',statistic,result);
+                    runMenu = 0;
                 end
             end
         case 14 % Generate diagrams
@@ -56,4 +56,3 @@ while runProgram
             fprintf('\nInvalid action. Please try again.\nRemember first to load data.\n')
     end
 end
-
