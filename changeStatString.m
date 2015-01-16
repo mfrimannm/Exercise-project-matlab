@@ -17,9 +17,7 @@ switch statString
         newString = 'Mean Cold Growth rate';
     case '7'
         newString = 'Mean Hot Growth rate';
-    otherwise    
+    otherwise
         newString = statString;
 end
-
 end
-
