@@ -7,7 +7,7 @@ while run
     if answer == 'y'
         YN = 1;
         run = 0;
-    elseif YN == 'n'    
+    elseif answer == 'n'    
         YN = 0;
         run = 0;
     else
