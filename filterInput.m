@@ -45,7 +45,7 @@ if inputYesNo(tempYN)
             end
         end
     end
-    tempMaxYN ('\nWould you like to input a maximum temperature for the filter? (Y/N): ');
+    tempMaxYN = ('\nWould you like to input a maximum temperature for the filter? (Y/N): ');
     if inputYesNo(tempMaxYN)
         run = 1;
         while run
