@@ -29,7 +29,6 @@ if filterBacteria
     if not(bacteria4)
         newData = newData((newData(:,3)~=4),:);
     end
-    
 end
 
 % Temp
